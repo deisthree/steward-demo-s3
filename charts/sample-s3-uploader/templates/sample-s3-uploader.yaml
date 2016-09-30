@@ -11,8 +11,8 @@ metadata:
   annotations:
     "helm.sh/created": {{.Release.Time.Seconds | quote }}
 data:
-  service-id: "98FF26D0-2E01-11E5-9184-FEFF819CDC9F"
-  plan-id: "EAAD05D8-2E01-11E5-9184-FEFF819CDC9F"
+  service-id: "{{.Values.S3ServiceId}}"
+  plan-id: "{{.Values.S3PlanId}}"
   claim-id: "asdasd7234213"
   action: "create"
   target-name: "{{.Values.SecretName}}"
