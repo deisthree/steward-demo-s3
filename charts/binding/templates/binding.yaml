@@ -1,5 +1,5 @@
 kind: Binding
-apiVersion: v1
+apiVersion: steward.deis.io/v1
 metadata:
   name: "{{.Values.InstanceName}}"
   namespace: {{.Release.Namespace}}
@@ -9,7 +9,7 @@ metadata:
     chart: "{{.Chart.Name}}-{{.Chart.Version}}"
     component: "{{.Release.Name}}-{{.Values.Component}}"
   annotations:
-    "helm.sh/created": {{.Release.Time.Seconds | quote }}
+    "helm.sh/created": "{{.Release.Time.Seconds}}"
 spec:
     id: 09e13f8c-8dee-480d-9e29-896ae12534fa
     instance_ref:
