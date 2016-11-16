@@ -7,7 +7,7 @@ ServicePort: 80
 ContainerPort: 8080
 Component: "steward"
 Replicas: 1
-StewardImage: "quay.io/deisci/steward-cf"
+StewardImage: "quay.io/arschles/steward-cf"
 StewardImageTag: "devel"
 StewardImagePullPolicy: "Always"
 StewardWatchNamespaces: "default,steward"
