@@ -11,11 +11,6 @@ metadata:
   annotations:
     "helm.sh/created": {{.Release.Time.Seconds | quote }}
 data:
-  # service-id: "{{.Values.S3ServiceId}}"
-  # plan-id: "{{.Values.S3PlanId}}"
-  # claim-id: "asdasd7234213"
-  # action: "create"
-  # target-name: "{{.Values.SecretName}}"
   spec:
     url: "{{.Values.CfBrokerScheme}}://{{.Release.Name}}-broker.{{.Release.Namespace}}.svc.cluster.local:{{.Values.CfBrokerPort}}"
     username: {{.Values.CfBrokerUsername}}

@@ -5,11 +5,7 @@
 
 Component: "s3-uploader-claim"
 BrokerName: "s3"
-SecretName: "s3-bucket-secret"
-# This should match ../s3-service-provider/values.yaml -> CfBrokerServiceId
-S3ServiceId: "98FF26D0-2E01-11E5-9184-FEFF819CDC9F"
-# This should match ../s3-service-provider/values.yaml -> CfBrokerPlanId
-S3PlanId: "EAAD05D8-2E01-11E5-9184-FEFF819CDC9F"
+
 # this should match ../s3-service-provider/values.yaml -> CfBrokerScheme
 CfBrokerScheme: "http"
 # this should match ../s3-service-provider/values.yaml -> CfBrokerPort
