@@ -1,15 +1,15 @@
 kind: Broker
-apiVersion: v1
+apiVersion: steward.deis.io/v1
 metadata:
-  name: "{{.Values.BrokerName}}"
+  name: {{.Values.BrokerName}}
   namespace: {{.Release.Namespace}}
   labels:
     type: broker
     release: {{.Release.Name | quote }}
-    chart: "{{.Chart.Name}}-{{.Chart.Version}}"
-    component: "{{.Release.Name}}-{{.Values.Component}}"
+    chart: {{.Chart.Name}}-{{.Chart.Version}}
+    component: {{.Release.Name}}-{{.Values.Component}}
   annotations:
-    "helm.sh/created": {{.Release.Time.Seconds | quote }}
+    "helm.sh/created": "{{.Release.Time.Seconds }}"
 spec:
   url: "{{.Values.CfBrokerScheme}}://{{.Release.Name}}-broker.{{.Release.Namespace}}.svc.cluster.local:{{.Values.CfBrokerPort}}"
   username: {{.Values.CfBrokerUsername}}
