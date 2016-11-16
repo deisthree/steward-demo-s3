@@ -24,7 +24,7 @@ data:
           "services": [
             {
               "id": "{{.Values.CfBrokerServiceId}}",
-              "name": "{{.ValuesCfBrokerServiceName}}",
+              "name": "{{.Values.CfBrokerServiceName}}",
               "description": "Amazon Simple Storage Service (S3)",
               "bindable": true,
               "tags": [
