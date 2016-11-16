@@ -53,6 +53,13 @@ bind API call on the backing S3 CF broker API. This call in turn creates new IAM
 credentials which get written into a secret called `s3-demo-secret`, in the same
 namespace as the `Binding` itself.
 
+# charts/s3-uploader
+
+This chart installs a job that consumes the secret output from the charts/binding
+chart, connects to the S3 bucket described in the secret, and uploads a jpeg
+image to the bucket.
+
+
 # Prerequisites
 
 You must have AWS credentials with full S3 and IAM access. The access key
@@ -72,3 +79,4 @@ the backing CF service broker
 1. [binding](./charts/binding) to install the `Binding` resource
   - After this step, a secret called `s3-demo-secret` should be written to the
   same namespace as the `Binding` resource itself
+1. [s3-uploader](./charts/s3-uploader) to run the uploader job
