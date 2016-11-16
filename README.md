@@ -1,6 +1,8 @@
 # Steward S3 Demo
 
-This repository contains helm charts intended to demo Steward. They currently only demo Steward's CloudFoundry integration.
+This repository contains helm charts intended to demo
+[Steward CF](https://github.com/deis/steward-cf).
+
 
 The following charts are available:
 
@@ -9,15 +11,19 @@ The following charts are available:
 This chart installs the following:
 
 * A configured s3-cf-broker (the broker is taken from a [CloudFoundry community implementation](https://github.com/cloudfoundry-community/s3-broker)
-* A Steward configured in CloudFoundry mode and pointed at the aforementioned broker
+* A Steward CF instance
 
 ## Broker Details
 
-On provision, the broker will create an S3 bucket. On bind, the broker will create an IAM user and grant acccess to the aforementioned bucket.
+When an `Instance` is later created, steward-cf will call the backing CF service
+broker's provision API to create a new S3 bucket. When a `Binding` is created,
+steward-cf will call the backing CF service broker's binding API to create
+an IAM user and grant access to the aforementioned bucket.
 
 ## Steward Details
 
-After a bind, Steward will drop the bucket-name, AWS_ACCESS_KEY, AWS_SECRET_KEY into a kubernetes secret, which will look like the following:
+After a bind, steward-cf will drop the bucket-name, `AWS_ACCESS_KEY`, and
+`AWS_SECRET_KEY` into a kubernetes Secret. It will look like the following:
 
 ```yaml
 kind: Secret
@@ -28,28 +34,41 @@ data:
   username: <AWS_ACCESS_KEY>
 ```
 
-# charts/claim
+# charts/broker
 
-This chart installs the following:
+This chart installs a `Broker` resource, which tells `steward-cf` to connect to
+the backing S3 CF service broker API, list its catalog, and write a
+`ServiceClass` resource for each service therein
 
-* A Steward [service plan claim](https://github.com/deis/steward/blob/master/doc/DATA_STRUCTURES.md#serviceplanclaim) to provision and bind (`action: create`) a new S3 bucket and IAM credentials to access that bucket
+# charts/instance
 
-# charts/s3-uploader
+This chart installs an `Instance` resource, which tells `steward-cf` to make a
+provision API call on the backing S3 CF broker API. This call in turn creates
+a new S3 bucket.
 
-This chart installs the following:
+# charts/binding
 
-* An application (run as a Kubernetes job) that consumes the credentials produced by steward (as a result of the aforementioned claim) and writes data to the newly created bucket
-
+This chart installs a `Binding` resource, which tells `steward-cf` to make a
+bind API call on the backing S3 CF broker API. This call in turn creates new IAM
+credentials which get written into a secret called `s3-demo-secret`, in the same
+namespace as the `Binding` itself.
 
 # Prerequisites
 
-You must have AWS credentials with full S3 and IAM access. The access key should be stored in the `AWS_ACCESS_KEY_ID` environment variable, and the secret should be stored in the `AWS_SECRET_ACCESS_KEY` environment variable.
+You must have AWS credentials with full S3 and IAM access. The access key
+should be stored in the `AWS_ACCESS_KEY_ID` environment variable, and the secret
+ should be stored in the `AWS_SECRET_ACCESS_KEY` environment variable.
 
 # Demo
 
 In order to use these helm charts to show a start-to-finish demo of Steward's capability, install the following charts in order:
 
-1. [s3-service-provider](./charts/s3-service-provider) - installs steward and the backing broker
-2. [claim](./charts/claim) - submits an `action: create` claim to steward, which in turn calls the CF broker
-  - The CF broker creates new IAM credentials. Before proceeding past this step, wait a bit for the new creds to be pushed across regions
-3. [s3-uploader](./charts/s3-uploader) - installs the application that consumes the newly created bucket using the new IAM credentials
+1. [s3-service-provider](./charts/s3-service-provider) to install steward-cf and
+the backing CF service broker
+1. [broker](./charts/broker) to install the `Broker` resource
+  - After this step, a list of `ServiceClass` resources should be written to
+  the `steward` namespace
+1. [instance](./charts/instance) to install the `Instance` resource
+1. [binding](./charts/binding) to install the `Binding` resource
+  - After this step, a secret called `s3-demo-secret` should be written to the
+  same namespace as the `Binding` resource itself
