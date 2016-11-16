@@ -1,6 +1,7 @@
-# Steward Service Plan Claim
+# Steward Broker
 
-This [Helm](https://github.com/kubernetes/helm) chart installs a new Steward [service plan claim](https://github.com/deis/steward/blob/master/doc/DATA_STRUCTURES.md#serviceplanclaim) to create a new S3 bucket and bind to it. The binding process creates new IAM credentials to access the bucket
+This [Helm](https://github.com/kubernetes/helm) chart installs a new `Broker`
+resource that tells Steward to connect to the S3 backing CF service broker
 
 # Installation
 
