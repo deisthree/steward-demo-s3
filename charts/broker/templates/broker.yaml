@@ -10,9 +10,8 @@ metadata:
     component: "{{.Release.Name}}-{{.Values.Component}}"
   annotations:
     "helm.sh/created": {{.Release.Time.Seconds | quote }}
-data:
-  spec:
-    url: "{{.Values.CfBrokerScheme}}://{{.Release.Name}}-broker.{{.Release.Namespace}}.svc.cluster.local:{{.Values.CfBrokerPort}}"
-    username: {{.Values.CfBrokerUsername}}
-    password: {{.Values.CfBrokerPassword}}
-  status:
+spec:
+  url: "{{.Values.CfBrokerScheme}}://{{.Release.Name}}-broker.{{.Release.Namespace}}.svc.cluster.local:{{.Values.CfBrokerPort}}"
+  username: {{.Values.CfBrokerUsername}}
+  password: {{.Values.CfBrokerPassword}}
+status:
