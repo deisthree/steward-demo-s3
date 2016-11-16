@@ -24,7 +24,7 @@ data:
           "services": [
             {
               "id": "{{.Values.CfBrokerServiceId}}",
-              "name": "aws-s3",
+              "name": "{{.ValuesCfBrokerServiceName}}",
               "description": "Amazon Simple Storage Service (S3)",
               "bindable": true,
               "tags": [
@@ -44,7 +44,7 @@ data:
               "plans": [
                 {
                   "id": "{{.Values.CfBrokerPlanId}}",
-                  "name": "default",
+                  "name": "{{.Values.CfBrokerPlanName}}",
                   "description": "Provides a single S3 bucket with unlimited storage.",
                   "metadata": {
                     "costs": [
@@ -70,4 +70,3 @@ data:
         }
       }
     }
-
