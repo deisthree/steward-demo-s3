@@ -10,12 +10,11 @@ metadata:
     component: "{{.Release.Name}}-{{.Values.Component}}"
   annotations:
     "helm.sh/created": {{.Release.Time.Seconds | quote }}
-data:
-  spec:
-    id: 09e13f8c-8dee-480d-9e29-896ae12534fa
-    service_class_ref:
-      kind: ServiceClassRef
-      namespace: {{.Release.Namespace}}
-      name: "{{.Values.BrokerName}}-{{.Values.ServiceName}}"
-    plan_id: {{.Values.S3PlanID}}
-  status:
+spec:
+  id: 09e13f8c-8dee-480d-9e29-896ae12534fa
+  service_class_ref:
+    kind: ServiceClassRef
+    namespace: {{.Release.Namespace}}
+    name: "{{.Values.BrokerName}}-{{.Values.ServiceName}}"
+  plan_id: {{.Values.S3PlanID}}
+status:
