@@ -11,7 +11,7 @@ metadata:
   annotations:
     "helm.sh/created": {{.Release.Time.Seconds | quote }}
 spec:
-    binding_id: 09e13f8c-8dee-480d-9e29-896ae12534fa
+    id: 09e13f8c-8dee-480d-9e29-896ae12534fa
     instance_ref:
       kind: Instance
       namespace: {{.Release.Namespace}}
