@@ -13,5 +13,5 @@ Installation of this chart is simple. Assuming the following:
 ... install with this command:
 
 ```console
-helm install .  --namespace=default
+helm install .  --namespace=steward
 ```
