@@ -14,7 +14,7 @@ spec:
   id: 09e13f8c-8dee-480d-9e29-896ae12534fa
   service_class_ref:
     kind: ServiceClass
-    namespace: {{.Release.Namespace}}
+    namespace: {{.Values.ServiceClassNamespace}}
     name: "{{.Values.BrokerName}}-{{.Values.ServiceName}}"
   plan_id: {{.Values.S3PlanID}}
 status:
