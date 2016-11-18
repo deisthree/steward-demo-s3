@@ -1,6 +1,8 @@
 # Steward/S3 Consumer Application
 
-This [Helm](https://github.com/kubernetes/helm) chart installs an application and a claim that provisions a new S3 bucket with [Steward](https://github.com/deis/steward).
+This [Helm](https://github.com/kubernetes/helm) chart installs an application
+that consumes a secret with S3 bucket information and credentials and uses it
+to upload a picture to the bucket.
 
 # Installation
 
@@ -12,5 +14,5 @@ Installation of this chart is simple. Assuming the following:
 ... install with this command:
 
 ```console
-helm install .  --namespace=steward
+helm install .  --namespace=default
 ```
