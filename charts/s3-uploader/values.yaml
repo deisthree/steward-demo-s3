@@ -8,8 +8,8 @@ Component: "s3-uploader"
 Image: "quay.io/lachie83/s3-uploader"
 ImageTag: "v1.0"
 ImagePullPolicy: "Always"
-ClaimName: "s3-bucket-claim"
-SecretName: "s3-bucket-secret"
+# This should match ../binding/values.yaml -> SecretName
+SecretName: "s3-demo-secret"
 # This should match ../s3-service-provider/values.yaml -> CfBrokerServiceId
 S3ServiceId: "98FF26D0-2E01-11E5-9184-FEFF819CDC9F"
 # This should match ../s3-service-provider/values.yaml -> CfBrokerPlanId
