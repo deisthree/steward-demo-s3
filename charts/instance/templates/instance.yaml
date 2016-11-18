@@ -16,5 +16,5 @@ spec:
     kind: ServiceClass
     namespace: {{.Values.ServiceClassNamespace}}
     name: "{{.Values.BrokerName}}-{{.Values.ServiceName}}"
-  plan_id: {{.Values.S3PlanID}}
+  plan_id: {{.Values.S3PlanId}}
 status:
