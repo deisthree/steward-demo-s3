@@ -24,6 +24,7 @@ CfBrokerServiceId: "98FF26D0-2E01-11E5-9184-FEFF819CDC9F"
 CfBrokerServiceName: "demo-service"
 CfBrokerPlanId: "EAAD05D8-2E01-11E5-9184-FEFF819CDC9F"
 CfBrokerPlanName: "demo-plan"
+CfBrokerBucketPrefix: "cf"
 
 AdminAwsAccessKeyId: ""
 AdminAwsSecretAccessKey: ""

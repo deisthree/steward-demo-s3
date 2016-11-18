@@ -17,7 +17,7 @@ data:
       "password": "{{.Values.CfBrokerPassword}}",
       "s3_config": {
         "region": "us-east-1",
-        "bucket_prefix": "cf",
+        "bucket_prefix": "{{.Values.CfBrokerBucketPrefix}}",
         "allow_user_provision_parameters": false,
         "allow_user_update_parameters": false,
         "catalog": {
