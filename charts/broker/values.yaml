@@ -9,11 +9,10 @@ BrokerName: "s3"
 # This should be set via a '--set' flag
 BrokerReleaseName: "unknown"
 
-# this should match ../s3-service-provider/values.yaml -> CfBrokerScheme
-CfBrokerScheme: "http"
-# this should match ../s3-service-provider/values.yaml -> CfBrokerPort
-CfBrokerPort: 3000
-# this should match ../s3-service-provider/values.yaml -> CfBrokerUsername
-CfBrokerUsername: "username"
-# this should match ../s3-service-provider/values.yaml -> CfBrokerPassword
-CfBrokerPassword: "password"
+AccessScheme: "http"
+# this should match ../s3-service-provider/values.yaml -> Port
+BrokerPort: 3000
+# this should match ../s3-service-provider/values.yaml -> Username
+BrokerUsername: "username"
+# this should match ../s3-service-provider/values.yaml -> Password
+BrokerPassword: "password"

@@ -1,9 +1,8 @@
-# Steward Service Plan Instance
+# Steward Service Binding
 
-This [Helm](https://github.com/kubernetes/helm) chart installs a new Steward
-Instance to provision a new S3 bucket
+This [Helm](https://github.com/kubernetes/helm) chart installs a new Steward `Binding` to obtain S3 bucket credentials
 
-# Installation
+## Installation
 
 Installation of this chart is simple. Assuming the following:
 

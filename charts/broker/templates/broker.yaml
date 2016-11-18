@@ -11,7 +11,7 @@ metadata:
   annotations:
     "helm.sh/created": "{{.Release.Time.Seconds }}"
 spec:
-  url: "{{.Values.CfBrokerScheme}}://{{.Values.BrokerReleaseName}}-broker.{{.Release.Namespace}}.svc.cluster.local:{{.Values.CfBrokerPort}}"
-  username: {{.Values.CfBrokerUsername}}
-  password: {{.Values.CfBrokerPassword}}
+  url: "{{.Values.AccessScheme}}://{{.Values.BrokerReleaseName}}-s3-broker.{{.Release.Namespace}}.svc.cluster.local:{{.Values.BrokerPort}}"
+  username: {{.Values.BrokerUsername}}
+  password: {{.Values.BrokerPassword}}
 status:

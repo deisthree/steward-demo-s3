@@ -1,6 +1,3 @@
-name: claim
+name: broker
 version: 0.1.0
-description: a service plan claim to ask Steward to create a new bucket and IAM creds for it
-maintainers:
-  - name: Lachlan Evenson
-    email: lachlan@deis.com
+description: A broker definition for connecting Steward CF to the S3 service provider

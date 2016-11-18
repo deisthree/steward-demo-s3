@@ -4,7 +4,7 @@ metadata:
   name: "{{.Values.InstanceName}}"
   namespace: {{.Release.Namespace}}
   labels:
-    type: broker
+    type: instance
     release: {{.Release.Name | quote }}
     chart: "{{.Chart.Name}}-{{.Chart.Version}}"
     component: "{{.Release.Name}}-{{.Values.Component}}"
@@ -16,5 +16,5 @@ spec:
     kind: ServiceClass
     namespace: {{.Values.ServiceClassNamespace}}
     name: "{{.Values.BrokerName}}-{{.Values.ServiceName}}"
-  plan_id: {{.Values.S3PlanId}}
+  plan_id: {{.Values.PlanId}}
 status:

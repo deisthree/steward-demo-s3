@@ -9,17 +9,3 @@ SecretName: "s3-demo-secret"
 
 # This should match ../instance/values.yaml -> InstanceName
 InstanceName: "s3"
-# This should match ../s3-service-provider/values.yaml -> CfBrokerServiceId
-S3ServiceId: "98FF26D0-2E01-11E5-9184-FEFF819CDC9F"
-# This should match ../s3-service-provider/values.yaml -> CfBrokerPlanId
-S3PlanId: "EAAD05D8-2E01-11E5-9184-FEFF819CDC9F"
-# This should match ../s3-service-provider/values.yaml -> CfBrokerServiceName
-ServiceName: "demo-service"
-# this should match ../s3-service-provider/values.yaml -> CfBrokerScheme
-CfBrokerScheme: "http"
-# this should match ../s3-service-provider/values.yaml -> CfBrokerPort
-CfBrokerPort: 3000
-# this should match ../s3-service-provider/values.yaml -> CfBrokerUsername
-CfBrokerUsername: "username"
-# this should match ../s3-service-provider/values.yaml -> CfBrokerPassword
-CfBrokerPassword: "password"

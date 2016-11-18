@@ -1,6 +1,3 @@
-name: claim
+name: binding
 version: 0.1.0
-description: a service plan claim to ask Steward to create a new bucket and IAM creds for it
-maintainers:
-  - name: Lachlan Evenson
-    email: lachlan@deis.com
+description: A binding definition for obtaining S3 bucket credentials

@@ -3,28 +3,21 @@
 # Declare name/value pairs to be passed into your templates.
 # name: value
 
-ServicePort: 80
-ContainerPort: 8080
-Component: "steward"
+Image: "lachlanevenson/s3-broker"
+ImageTag: "latest"
+ImagePullPolicy: "Always"
+
 Replicas: 1
-StewardImage: "quay.io/arschles/steward-cf"
-StewardImageTag: "devel"
-StewardImagePullPolicy: "Always"
-StewardWatchNamespaces: "default,steward"
 
-BrokerImage: "lachlanevenson/s3-broker"
-BrokerImageTag: "latest"
-BrokerImagePullPolicy: "Always"
-CfBrokerScheme: "http"
-CfBrokerPort: 3000
-CfBrokerUsername: "username"
-CfBrokerPassword: "password"
+Port: 3000
+Username: "username"
+Password: "password"
 
-CfBrokerServiceId: "98FF26D0-2E01-11E5-9184-FEFF819CDC9F"
-CfBrokerServiceName: "demo-service"
-CfBrokerPlanId: "EAAD05D8-2E01-11E5-9184-FEFF819CDC9F"
-CfBrokerPlanName: "demo-plan"
-CfBrokerBucketPrefix: "cf"
+ServiceId: "98FF26D0-2E01-11E5-9184-FEFF819CDC9F"
+ServiceName: "bucket"
+PlanId: "EAAD05D8-2E01-11E5-9184-FEFF819CDC9F"
+PlanName: "standard"
+BucketPrefix: "cf"
 
 AdminAwsAccessKeyId: ""
 AdminAwsSecretAccessKey: ""

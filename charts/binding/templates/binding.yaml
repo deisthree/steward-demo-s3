@@ -1,10 +1,10 @@
 kind: Binding
 apiVersion: steward.deis.io/v1
 metadata:
-  name: "{{.Values.InstanceName}}"
+  name: "{{.Values.BindingName}}"
   namespace: {{.Release.Namespace}}
   labels:
-    type: broker
+    type: binding
     release: {{.Release.Name | quote }}
     chart: "{{.Chart.Name}}-{{.Chart.Version}}"
     component: "{{.Release.Name}}-{{.Values.Component}}"

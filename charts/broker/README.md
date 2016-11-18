@@ -1,9 +1,8 @@
 # Steward Broker
 
-This [Helm](https://github.com/kubernetes/helm) chart installs a new `Broker`
-resource that tells Steward to connect to the S3 backing CF service broker
+This [Helm](https://github.com/kubernetes/helm) chart installs a new `Broker` resource that connects Steward CF to the S3 service provider
 
-# Installation
+## Installation
 
 Installation of this chart is simple. Assuming the following:
 
