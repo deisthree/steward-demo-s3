@@ -6,6 +6,9 @@
 Component: "s3-uploader-broker"
 BrokerName: "s3"
 
+# This should be set via a '--set' flag
+BrokerReleaseName: "unknown"
+
 # this should match ../s3-service-provider/values.yaml -> CfBrokerScheme
 CfBrokerScheme: "http"
 # this should match ../s3-service-provider/values.yaml -> CfBrokerPort

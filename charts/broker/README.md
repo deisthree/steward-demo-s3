@@ -13,5 +13,8 @@ Installation of this chart is simple. Assuming the following:
 ... install with this command:
 
 ```console
-helm install .  --namespace=steward
+helm install .  --namespace=steward --set BrokerReleaseName="${RELEASE_NAME}"
 ```
+
+... where `${RELEASE_NAME}` is the name of the release created when the
+../s3-service-provider chart was installed
