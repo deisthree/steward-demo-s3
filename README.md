@@ -70,8 +70,8 @@ should be stored in the `AWS_ACCESS_KEY_ID` environment variable, and the secret
 
 In order to use these helm charts to show a start-to-finish demo of Steward's capability, install the following charts in order:
 
-1. [s3-service-provider](./charts/s3-service-provider) to install steward-cf and
-the backing CF service broker
+1. [s3-service-provider](./charts/s3-service-provider) to install the backing CF service broker
+1. [steward-cf](.charts/steward-cf) to install steward-cf
 1. [broker](./charts/broker) to install the `Broker` resource
   - After this step, a list of `ServiceClass` resources should be written to
   the `steward` namespace
