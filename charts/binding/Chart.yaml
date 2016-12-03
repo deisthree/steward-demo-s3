@@ -1,6 +1,6 @@
-name: s3-uploader
+name: binding
 version: 0.1.0
-description: s3-uploader Helm chart for Kubernetes.
+description: A binding definition for obtaining S3 bucket credentials
 maintainers:
   - name: Deis Engineering
     email: engineering@deis.com

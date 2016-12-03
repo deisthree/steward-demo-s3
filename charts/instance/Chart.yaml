@@ -1,6 +1,6 @@
-name: s3-uploader
+name: instance
 version: 0.1.0
-description: s3-uploader Helm chart for Kubernetes.
+description: An instance definition for provisioning an S3 bucket
 maintainers:
   - name: Deis Engineering
     email: engineering@deis.com

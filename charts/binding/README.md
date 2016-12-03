@@ -1,10 +1,8 @@
-# Steward/S3 Consumer Application
+# Steward Service Binding
 
-This [Helm](https://github.com/kubernetes/helm) chart installs an application
-that consumes a secret with S3 bucket information and credentials and uses it
-to upload a picture to the bucket.
+This [Helm](https://github.com/kubernetes/helm) chart installs a new Steward `Binding` to obtain S3 bucket credentials
 
-# Installation
+## Installation
 
 Installation of this chart is simple. Assuming the following:
 
