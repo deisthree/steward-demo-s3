@@ -5,8 +5,8 @@
 
 # Image: "quay.io/arschles/steward-cf"
 # ImageTag: "devel"
-Image: "192.168.99.100:5000/krancour/steward-cf"
-ImageTag: "git-658e6bd"
+Image: "quay.io/deisci/steward-cf"
+ImageTag: "devel"
 ImagePullPolicy: "Always"
 
 Replicas: 1
