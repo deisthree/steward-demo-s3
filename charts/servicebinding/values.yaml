@@ -7,5 +7,5 @@ Component: "s3-uploader-binding"
 BindingName: "s3"
 SecretName: "s3-demo-secret"
 
-# This should match ../instance/values.yaml -> InstanceName
+# This should match ../serviceinstance/values.yaml -> InstanceName
 InstanceName: "s3"

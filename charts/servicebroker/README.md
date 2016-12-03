@@ -1,10 +1,11 @@
-# Steward Broker
+# A Steward ServiceBroker
 
-This [Helm](https://github.com/kubernetes/helm) chart installs a new `Broker` resource that connects Steward CF to the S3 service provider
+This [Helm](https://github.com/kubernetes/helm) chart installs a new `ServiceBroker` resource that
+connects Steward CF to the S3 service provider
 
 ## Installation
 
-Installation of this chart is simple. Assuming the following:
+Installation of this chart is simple, assuming the following:
 
 - You have the `helm` CLI and the Tiller server running (simply `helm init` to get the latter)
 - Your current working directory is this folder

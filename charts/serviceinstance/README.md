@@ -1,10 +1,11 @@
-# Steward Service Instance
+# A Steward ServiceInstance
 
-This [Helm](https://github.com/kubernetes/helm) chart installs a new Steward `Instance` to provision a new S3 bucket
+This [Helm](https://github.com/kubernetes/helm) chart installs a new Steward `ServiceInstance` to
+provision a new S3 bucket
 
 ## Installation
 
-Installation of this chart is simple. Assuming the following:
+Installation of this chart is simple, assuming the following:
 
 - You have the `helm` CLI and the Tiller server running (simply `helm init` to get the latter)
 - Your current working directory is this folder
