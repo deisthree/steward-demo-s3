@@ -72,11 +72,13 @@ In order to use these helm charts to show a start-to-finish demo of Steward's ca
 
 1. [s3-service-provider](./charts/s3-service-provider) to install the backing CF service broker
 1. [steward-cf](.charts/steward-cf) to install steward-cf
-1. [broker](./charts/broker) to install the `Broker` resource
+1. [servicebroker](./charts/servicebroker) to install the `ServiceBroker` resource
   - After this step, a list of `ServiceClass` resources should be written to
   the `steward` namespace
-1. [instance](./charts/instance) to install the `Instance` resource
-1. [binding](./charts/binding) to install the `Binding` resource
+1. [serviceinstance](./charts/serviceinstance) to install the `ServiceInstance` resource
+  - After this step, an S3 bucket should be provisioned in response to the creation of that
+  resource
+1. [servicebinding](./charts/servicebinding) to install the `ServiceBinding` resource
   - After this step, a secret called `s3-demo-secret` should be written to the
-  same namespace as the `Binding` resource itself
+  same namespace as the `ServiceBinding` resource itself
 1. [s3-uploader](./charts/s3-uploader) to run the uploader job

@@ -4,7 +4,7 @@
 # name: value
 
 Component: "s3-uploader-instance"
-# This should  match ../broker/values.yaml -> BrokerName
+# This should  match ../servicebroker/values.yaml -> BrokerName
 BrokerName: "s3"
 
 InstanceName: "s3"
@@ -13,5 +13,5 @@ ServiceName: "bucket"
 # This should match ../s3-service-provider/values.yaml -> PlanId
 PlanId: "EAAD05D8-2E01-11E5-9184-FEFF819CDC9F"
 # This should be set via a '--set' flag, and should be the same namespace as
-# used in the ../broker chart
+# used in the ../servicebroker chart
 ServiceClassNamespace: "unknown"

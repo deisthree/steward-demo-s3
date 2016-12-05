@@ -1,21 +1,20 @@
-kind: Binding
+kind: ServiceInstance
 apiVersion: steward.deis.io/v1
 metadata:
-  name: "{{.Values.BindingName}}"
+  name: "{{.Values.InstanceName}}"
   namespace: {{.Release.Namespace}}
   labels:
-    type: binding
+    type: instance
     release: {{.Release.Name | quote }}
     chart: "{{.Chart.Name}}-{{.Chart.Version}}"
     component: "{{.Release.Name}}-{{.Values.Component}}"
   annotations:
     "helm.sh/created": "{{.Release.Time.Seconds}}"
 spec:
-    id: {{ uuidv4 }}
-    instance_ref:
-      kind: Instance
-      namespace: {{.Release.Namespace}}
-      name: "{{.Values.InstanceName}}"
-    parameters:
-    secret_name: {{.Values.SecretName}}
+  id: {{ uuidv4 }}
+  service_class_ref:
+    kind: ServiceClass
+    namespace: {{.Values.ServiceClassNamespace}}
+    name: "{{.Values.BrokerName}}-{{.Values.ServiceName}}"
+  plan_id: {{.Values.PlanId}}
 status:
