@@ -1,6 +1,6 @@
 # Steward CF
 
-This [Helm](https://github.com/kubernetes/helm) chart installs [Steward CF](https://github.com/deis/steward-cf).
+This [Helm](https://github.com/kubernetes/helm) chart installs [Steward CF](https://github.com/deisthree/steward-cf).
 
 ## Installation
 

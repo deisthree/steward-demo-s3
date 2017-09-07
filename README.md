@@ -1,7 +1,7 @@
 # Steward S3 Demo
 
 This repository contains helm charts intended to demo
-[Steward CF](https://github.com/deis/steward-cf).
+[Steward CF](https://github.com/deisthree/steward-cf).
 
 
 The following charts are available:
